@@ -1,0 +1,175 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --bg: #f6f7fb;
+  --panel: #fff;
+  --text: #212529;
+  --muted: #667085;
+  --accent: #2f6feb;
+  --border: #dfe3ea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header p {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr 330px;
+  gap: 1rem;
+  padding: 1rem;
+  min-height: calc(100vh - 86px);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 0;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+label,
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.45rem 0.6rem;
+  background: #fff;
+}
+
+button {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+}
+
+button.ghost {
+  border-color: var(--border);
+  background: #fff;
+  color: var(--text);
+}
+
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.checkbox-list label {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hint {
+  font-size: 0.9rem;
+  color: var(--muted);
+  border-top: 1px dashed var(--border);
+  padding-top: 0.7rem;
+}
+
+#map {
+  width: 100%;
+  height: 380px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.point-form .buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chat-panel {
+  min-height: 0;
+}
+
+.chat-messages {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fafbff;
+  padding: 0.5rem;
+  flex: 1;
+  min-height: 220px;
+  overflow: auto;
+}
+
+.chat-item {
+  margin-bottom: 0.45rem;
+  padding: 0.45rem;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid var(--border);
+}
+
+.chat-item.me {
+  border-color: #bcd1ff;
+  background: #eaf1ff;
+}
+
+.chat-meta {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+}
+
+@media (max-width: 1180px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  #map {
+    height: 320px;
+  }
+}
